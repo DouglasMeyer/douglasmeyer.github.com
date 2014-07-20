@@ -1,0 +1,35 @@
+//Grid
+$column_width: 140px;
+$gutter_width: 20px;
+$column_count: 5;
+
+//http://clrs.cc/
+$black: #111111;
+$gray: #AAAAAA;
+$silver: #DDDDDD;
+
+html, body { width: 100%; height: 100%; margin: 0; }
+* { box-sizing: border-box; }
+
+html {
+  font-size: 18px;
+}
+body {
+  width: ($column_width + $gutter_width) * $column_count + $gutter_width;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  color: $black;
+}
+
+h1, h2, h3, h4 {
+  position: relative;
+  margin: 1.5em 0 0.5em;
+  border-bottom: 1px dotted #DDDDDD;
+
+  small {
+    float: right;
+    line-height: 2;
+  }
+}
+h1 + h2, h2 + h3, h3 + h4 { margin-top: 0; }
+p { margin: 0 0 1rem; }
