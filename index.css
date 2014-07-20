@@ -295,7 +295,6 @@ html {
   font-size: 18px; }
 
 body {
-  width: 820px;
   margin: 0 auto;
   background-color: #FFFFFF;
   color: #111111; }
@@ -313,3 +312,11 @@ h1 + h2, h2 + h3, h3 + h4 {
 
 p {
   margin: 0 0 1rem; }
+
+em {
+  font-style: normal;
+  border-bottom: 1px dotted #DDDDDD; }
+
+h1, h2, p {
+  margin-left: calc((100% - 30px) / 6 * 1 + 30px);
+  margin-right: calc((100% - 30px) / 6 * 1 + 30px); }

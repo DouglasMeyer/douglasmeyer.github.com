@@ -1,7 +1,7 @@
 //Grid
 $column_width: 140px;
-$gutter_width: 20px;
-$column_count: 5;
+$gutter_width: 30px;
+$column_count: 6;
 
 //http://clrs.cc/
 $black: #111111;
@@ -15,7 +15,6 @@ html {
   font-size: 18px;
 }
 body {
-  width: ($column_width + $gutter_width) * $column_count + $gutter_width;
   margin: 0 auto;
   background-color: #FFFFFF;
   color: $black;
@@ -33,3 +32,12 @@ h1, h2, h3, h4 {
 }
 h1 + h2, h2 + h3, h3 + h4 { margin-top: 0; }
 p { margin: 0 0 1rem; }
+em {
+  font-style: normal;
+  border-bottom: 1px dotted #DDDDDD;
+}
+
+h1, h2, p {
+  margin-left: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1 + #{$gutter_width})");
+  margin-right: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1 + #{$gutter_width})");
+}
