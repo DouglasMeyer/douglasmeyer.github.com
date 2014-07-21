@@ -283,6 +283,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.eot?v1in7d');
+  src: url('fonts/icomoon.eot?#iefixv1in7d') format('embedded-opentype'), url('fonts/icomoon.woff?v1in7d') format('woff'), url('fonts/icomoon.ttf?v1in7d') format('truetype'), url('fonts/icomoon.svg?v1in7d#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
 html, body {
   width: 100%;
   height: 100%;
@@ -292,22 +299,41 @@ html, body {
   box-sizing: border-box; }
 
 html {
-  font-size: 18px; }
+  font-size: 18px;
+  line-height: 1.2; }
 
 body {
   margin: 0 auto;
   background-color: #FFFFFF;
   color: #111111; }
 
-h1, h2, h3, h4 {
+.grid {
+  position: fixed;
+  width: 100%;
+  z-index: -1; }
+
+.column, .column--last {
+  display: inline-block;
+  height: 1em;
+  background-color: #DDDDDD;
+  width: calc(
+    (100% - 30px) * 0.2
+    - 30px);
+  margin-left: 30px; }
+
+.column--last {
+  margin-right: 30px; }
+
+h1, h2 {
   position: relative;
-  margin: 1.5em 0 0.5em;
+  margin-top: 3em;
+  margin-bottom: 1em;
   border-bottom: 1px dotted #DDDDDD; }
-  h1 small, h2 small, h3 small, h4 small {
+  h1 small, h2 small {
     float: right;
     line-height: 2; }
 
-h1 + h2, h2 + h3, h3 + h4 {
+h1 + h2 {
   margin-top: 0; }
 
 p {
@@ -317,6 +343,37 @@ em {
   font-style: normal;
   border-bottom: 1px dotted #DDDDDD; }
 
-h1, h2, p {
-  margin-left: calc((100% - 30px) / 6 * 1 + 30px);
-  margin-right: calc((100% - 30px) / 6 * 1 + 30px); }
+article {
+  margin-left: calc((100% - 30px) / 5 * 1 + 30px);
+  margin-right: calc((100% - 30px) / 5 * 1 + 30px); }
+
+aside {
+  position: absolute;
+  width: calc((100% - 30px) / 5 * 1 - 30px);
+  right: 0;
+  margin-right: 30px; }
+  aside h2 {
+    margin-top: 0; }
+
+article:first-child aside h2 {
+  height: 2.5rem;
+  line-height: 2.8rem; }
+
+article aside h2 a {
+  text-decoration: none; }
+
+a[href^="http://github.com"] {
+  text-decoration: none; }
+  a[href^="http://github.com"]:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e600";
+    padding-left: 0.5rem; }

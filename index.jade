@@ -15,96 +15,103 @@ html
           | , 
         em= item
 
-    h1
-      | Douglas J. Meyer 
-      small a man of few words
-    p
-      | I'm a senior software engineer with 7 years of professional
-      | web-development experience, and recently I've been focusing on
-      | front-end technologies. 
 
-    h2 Skills
-    p
-      +ems([
-        'Ruby on Rails',
-        'CoffeeScript',
-        'jQuery',
-        'git',
-        'AngularJS',
-        'SASS (CSS)',
-        'Postgres'
-      ])
+    article#Doug
+      aside
+        h2 Skills
+        +ems([
+          'Ruby on Rails',
+          'CoffeeScript',
+          'jQuery',
+          'git',
+          'AngularJS',
+          'SASS (CSS)',
+          'Postgres'
+        ])
+      h1 Douglas J. Meyer
+      p
+        | I'm a senior software engineer with 7 years of professional
+        | web-development experience, and recently I've been focusing on
+        | front-end technologies.
 
-    h2
-      | Senior Software Engineer @ Centro
-      small 2006 - now
-    p
-      | When I started, it was a small development team of 5 people working on a
-      | product for use within the company. This allowed me to be involved in
-      | many aspects of software development including:
-      +ems(['agile development', 'database migrations', 'deployment', 'product support', 'incorporating user feedback'])
-      | .
-    p
-      | Since then, it has grown to a 50 person software team working on a
-      | variety of internal and external products. This transition allowed me
-      | to learn a more specific set of technologies. As I've worked at Centro
-      | I've learned a number of technologies:
-      +ems(['Ruby on Rails', 'CoffeeScript', 'jQuery', 'AngularJS', 'git', 'gulp.js', 'jade', 'Postgres', 'SASS (CSS)', 'SproutCore'])
-      | .
+    article#Centro
+      aside
+        h2 2006 - now
+        p Senior Software Engineer
+      h2 Centro
+      p
+        | When I started, it was a small development team of 5 people working on a
+        | product for use within the company. This allowed me to be involved in
+        | many aspects of software development including:
+        +ems(['agile development', 'database migrations', 'deployment', 'product support', 'incorporating user feedback'])
+        | .
+      p
+        | Since then, it has grown to a 50 person software team working on a
+        | variety of internal and external products. This transition allowed me
+        | to learn a more specific set of technologies. As I've worked at Centro
+        | I've learned a number of technologies:
+        +ems(['Ruby on Rails', 'CoffeeScript', 'jQuery', 'AngularJS', 'git', 'gulp.js', 'jade', 'Postgres', 'SASS (CSS)', 'SproutCore'])
+        | .
 
-    h2
-      | Personal Projects
-    p
-      | My passion for web-development has spilled-over into my personal
-      | interests as well. Oftentimes, if I have an idea, I see if it works by
-      | trying it out in a personal project.
+    article#Personal-Projects
+      h2
+        | Personal Projects
+      p
+        | My passion for web-development has spilled-over into my personal
+        | interests as well. Oftentimes, if I have an idea, I see if it works by
+        | trying it out in a personal project.
 
-    h2
-      | Ledger
-      small
-        img(src="https://raw.githubusercontent.com/github/media/master/octocats/blacktocat-32.png")
-        a(href="http://github.com/DouglasMeyer/ledger") github.com/DouglasMeyer/ledger
-    p
-      | This is a zero-sum budget program I developed to get my wife and I out
-      | of rigid and fragile spreadsheets. I personally developed this project
-      | using:
-      +ems(['Ruby on Rails', 'Postgres', 'SASS', 'CoffeeScript', 'haml', 'AngularJS'])
-      | In this project, I explored with different front-end frameworks and from
-      | that was able to transition our products to use AngularJS.
+    article#Ledger
+      aside
+        h2 Skills
+        +ems(['Ruby on Rails', 'Postgres', 'SASS', 'CoffeeScript', 'haml', 'AngularJS'])
 
-    h2
-      a(href="http://www.douglas-meyer.name/BuildJS") BuildJS
-      small
-        img(src="https://raw.githubusercontent.com/github/media/master/octocats/blacktocat-32.png")
-        a(href="http://github.com/DouglasMeyer/BuildJS") github.com/DouglasMeyer/BuildJS
-    p
-      | This project was used to primarily learn the gulp front-end build
-      | systems and node.js development. In developing it, I got to use:
-      +ems(['node', 'npm', 'gulp', 'bower', 'livereload', 'connect'])
-      | .
+      h2
+        | Ledger
+        a(href="http://github.com/DouglasMeyer/ledger" title="on github")
+      p
+        | This is a zero-sum budget program I developed to get my wife and I out
+        | of rigid and fragile spreadsheets. In this project, I explored with
+        | different front-end frameworks and from that was able to transition
+        | our products to use AngularJS.
 
-    h2 git-backup
-      small
-        img(src="https://raw.githubusercontent.com/github/media/master/octocats/blacktocat-32.png")
-        a(href="https://github.com/DouglasMeyer/git-backup") github.com/DouglasMeyer/git-backup
-    p
-      | Git Backup/Restore is a utility that arose out of me wanting to backup
-      | local changes to git projects without publishing them and without
-      | duplicating information already on a remote server. Building this was
-      | mostly about learning more about git and linux scripting.
-      +ems(['git', 'linux'])
+    article#BuildJS
+      aside
+        h2 Skills
+        +ems(['node', 'npm', 'gulp', 'bower', 'livereload', 'connect'])
+      h2
+        a(href="http://www.douglas-meyer.name/BuildJS" title="see it in action") BuildJS
+        a(href="http://github.com/DouglasMeyer/BuildJS" title="on github")
+      p
+        | This project was used to primarily learn the gulp front-end build
+        | systems and node.js development.
 
-    h2
-      a(href="http://www.douglas-meyer.name/test_it/") TestIt
-      small
-        img(src="https://raw.githubusercontent.com/github/media/master/octocats/blacktocat-32.png")
-        a(href="https://github.com/DouglasMeyer/test_it") github.com/DouglasMeyer/test_it
-    p
-      | A JS testing framework I wrote because, at the time, most JS testing
-      | frameworks required a lot of setup before you could start testing.
-      | Because of it's simplicity and versatility, it was used for JS testing
-      | for a program where I worked.
-      +ems(['node', 'npm', 'JavaScript'])
+    article#git-backup
+      aside
+        h2 Skills
+        +ems(['git', 'linux'])
+      h2
+        | git-backup
+        a(href="http://github.com/DouglasMeyer/git-backup" title="on github")
+      p
+        | Git Backup/Restore is a utility that arose out of me wanting to backup
+        | local changes to git projects without publishing them and without
+        | duplicating information already on a remote server. Building this was
+        | mostly about learning more about git and linux scripting.
 
-    h2 Education
-    p Bachelors of Science in Computer Science @ Illinois Institute of Technology
+    article#TestIt
+      aside
+        h2 Skills
+        +ems(['node', 'npm', 'JavaScript'])
+      h2
+        a(href="http://www.douglas-meyer.name/test_it/" title="see it in action") TestIt
+        a(href="http://github.com/DouglasMeyer/test_it" title="on github")
+      p
+        | A JS testing framework I wrote because, at the time, most JS testing
+        | frameworks required a lot of setup before you could start testing.
+        | Because of it's simplicity and versatility, it was used for JS testing
+        | for a program where I worked.
+
+    article#Education
+      h2 Education
+      p Bachelors of Science in Computer Science @ Illinois Institute of Technology
