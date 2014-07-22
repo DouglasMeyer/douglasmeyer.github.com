@@ -40,7 +40,7 @@ html {
   line-height: 1.2;
 }
 body {
-  margin: 0 auto;
+  margin: 10rem auto 0;
   background-color: #FFFFFF;
   color: $black;
 }
@@ -65,19 +65,38 @@ em {
 
 article {
   margin-left: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1 + #{$gutter_width})");
-  margin-right: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1 + #{$gutter_width})");
+  margin-right: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 2 + #{$gutter_width})");
 }
 
 aside {
   position: absolute;
   width: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1 - #{$gutter_width})");
-  right: 0;
+  right: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1)");
   margin-right: $gutter_width;
 
-  h2 { margin-top: 0; }
+  h2 {
+    margin-top: 0;
+  }
 }
 
-article:first-child aside h2 {
+.banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+
+  aside h2 {
+    height: 2.45rem;
+    line-height: 2.8rem;
+  }
+  h1, h2 {
+    margin-bottom: 0;
+    border-bottom: 1px dotted #BBBBBB;
+  }
+}
+
+article.first-child aside h2 {
   height: 2.5rem;
   line-height: 2.8rem;
 }

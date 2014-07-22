@@ -303,22 +303,21 @@ html {
   line-height: 1.2; }
 
 body {
-  margin: 0 auto;
+  margin: 10rem auto 0;
   background-color: #FFFFFF;
   color: #111111; }
 
 .grid {
   position: fixed;
   width: 100%;
-  z-index: -1; }
+  z-index: -1;
+  top: 3rem; }
 
 .column, .column--last {
   display: inline-block;
   height: 1em;
   background-color: #DDDDDD;
-  width: calc(
-    (100% - 30px) * 0.2
-    - 30px);
+  width: calc((100% - 30px) / 5 * 1 - 30px);
   margin-left: 30px; }
 
 .column--last {
@@ -345,17 +344,30 @@ em {
 
 article {
   margin-left: calc((100% - 30px) / 5 * 1 + 30px);
-  margin-right: calc((100% - 30px) / 5 * 1 + 30px); }
+  margin-right: calc((100% - 30px) / 5 * 2 + 30px); }
 
 aside {
   position: absolute;
   width: calc((100% - 30px) / 5 * 1 - 30px);
-  right: 0;
+  right: calc((100% - 30px) / 5 * 1);
   margin-right: 30px; }
   aside h2 {
     margin-top: 0; }
 
-article:first-child aside h2 {
+.banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1; }
+  .banner aside h2 {
+    height: 2.45rem;
+    line-height: 2.8rem; }
+  .banner h1, .banner h2 {
+    margin-bottom: 0;
+    border-bottom: 1px dotted #BBBBBB; }
+
+article.first-child aside h2 {
   height: 2.5rem;
   line-height: 2.8rem; }
 
