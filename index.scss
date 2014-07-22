@@ -1,5 +1,5 @@
 //Grid
-$gutter_width: 30px;
+$gutter_width: 2rem;
 $column_count: 5;
 
 //http://clrs.cc/
@@ -32,6 +32,10 @@ $silver: #DDDDDD;
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@page {
+  margin: 3rem 0;
+}
+
 html, body { width: 100%; height: 100%; margin: 0; }
 * { box-sizing: border-box; }
 
@@ -43,6 +47,10 @@ body {
   margin: 10rem auto 0;
   background-color: #FFFFFF;
   color: $black;
+}
+@media print {
+  html { font-size: 12pt; }
+  body { margin-top: 0; height: 11in; width: 8.5in; position: relative; }
 }
 
 h1, h2 {
@@ -66,6 +74,12 @@ em {
 article {
   margin-left: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1 + #{$gutter_width})");
   margin-right: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 2 + #{$gutter_width})");
+
+  @media print {
+    margin-left: $gutter_width;
+    margin-right: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1 + #{$gutter_width})");
+    page-break-inside: avoid;
+  }
 }
 
 aside {
@@ -73,6 +87,10 @@ aside {
   width: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1 - #{$gutter_width})");
   right: unquote("calc((100% - #{$gutter_width}) / #{$column_count} * 1)");
   margin-right: $gutter_width;
+
+  @media print {
+    right: 0;
+  }
 
   h2 {
     margin-top: 0;
@@ -85,6 +103,11 @@ aside {
   width: 100%;
   background-color: white;
   z-index: 1;
+
+  @media print {
+    position: relative;
+    h1 { margin-top: 1rem; }
+  }
 
   aside h2 {
     height: 2.45rem;
@@ -104,11 +127,26 @@ article aside h2 a {
   text-decoration: none;
 }
 
+@media print {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
 a[href^="http://github.com"] {
   text-decoration: none;
   &:before {
     @include font-icon;
     content: "\e600";
     padding-left: 0.5rem;
+  }
+  @media print {
+    &:before { display: none; }
+    &:after {
+      margin-left: 1rem;
+      content: attr(href);
+      font-size: 1rem;
+      text-decoration: underline;
+    }
   }
 }
