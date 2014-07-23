@@ -1,6 +1,7 @@
 
 // - Requires
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     jade = require('gulp-jade'),
     concat = require('gulp-concat'),
     scss = require('gulp-sass'),
@@ -48,11 +49,11 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
   gulp.src(scssFiles)
-      .pipe(scss())
+      .pipe(scss().on('error', gutil.log))
       //.pipe(minifyCSS())
       .pipe(concat('index.css'))
       .pipe(gulp.dest(buildDir))
-      .pipe(refresh(lrServer))
+      .pipe(refresh(lrServer));
 });
 
 gulp.task('js', function() {

@@ -44,7 +44,7 @@ html {
   line-height: 1.2;
 }
 body {
-  margin: 10rem auto 0;
+  margin: 9.5rem auto 0;
   background-color: #FFFFFF;
   color: $black;
 }
@@ -56,7 +56,7 @@ body {
 h1, h2 {
   position: relative;
   margin-top: 3em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   border-bottom: 1px dotted #DDDDDD;
 
   small {
@@ -119,17 +119,15 @@ aside {
   }
 }
 
-article.first-child aside h2 {
-  height: 2.5rem;
-  line-height: 2.8rem;
-}
-article aside h2 a {
-  text-decoration: none;
-}
-
 @media print {
+  a[print-content] {
+    text-decoration: underline;
+    &:before {
+      content: attr(print-content) !important;
+      font-size: 1rem;
+    }
+  }
   a {
-    text-decoration: none;
     color: inherit;
   }
 }
@@ -149,4 +147,22 @@ a[href^="http://github.com"] {
       text-decoration: underline;
     }
   }
+}
+
+a[href^="mail-to:"] {
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+  @media print { text-decoration: underline; }
+
+  &:after {
+    @include font-icon;
+    content: "\e601";
+    vertical-align: bottom;
+
+    @media print { display: none; }
+  }
+}
+
+.screen-link {
+  @media print { text-decoration: none; }
 }

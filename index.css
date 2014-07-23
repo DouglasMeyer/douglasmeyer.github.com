@@ -306,7 +306,7 @@ html {
   line-height: 1.2; }
 
 body {
-  margin: 10rem auto 0;
+  margin: 9.5rem auto 0;
   background-color: #FFFFFF;
   color: #111111; }
 
@@ -319,26 +319,10 @@ body {
     width: 8.5in;
     position: relative; } }
 
-.grid {
-  position: fixed;
-  width: 100%;
-  z-index: -1;
-  top: 3rem; }
-
-.column, .column--last {
-  display: inline-block;
-  height: 1em;
-  background-color: #DDDDDD;
-  width: calc((100% - 2rem) / 5 * 1 - 2rem);
-  margin-left: 2rem; }
-
-.column--last {
-  margin-right: 2rem; }
-
 h1, h2 {
   position: relative;
   margin-top: 3em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   border-bottom: 1px dotted #DDDDDD; }
   h1 small, h2 small {
     float: right;
@@ -392,16 +376,13 @@ aside {
     margin-bottom: 0;
     border-bottom: 1px dotted #BBBBBB; }
 
-article.first-child aside h2 {
-  height: 2.5rem;
-  line-height: 2.8rem; }
-
-article aside h2 a {
-  text-decoration: none; }
-
 @media print {
+  a[print-content] {
+    text-decoration: underline; }
+    a[print-content]:before {
+      content: attr(print-content) !important;
+      font-size: 1rem; }
   a {
-    text-decoration: none;
     color: inherit; } }
 
 a[href^="http://github.com"] {
@@ -427,3 +408,31 @@ a[href^="http://github.com"] {
       content: attr(href);
       font-size: 1rem;
       text-decoration: underline; } }
+
+a[href^="mail-to:"] {
+  text-decoration: none; }
+  a[href^="mail-to:"]:hover {
+    text-decoration: underline; }
+  @media print {
+    a[href^="mail-to:"] {
+      text-decoration: underline; } }
+  a[href^="mail-to:"]:after {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e601";
+    vertical-align: bottom; }
+    @media print {
+      a[href^="mail-to:"]:after {
+        display: none; } }
+
+@media print {
+  .screen-link {
+    text-decoration: none; } }

@@ -13,28 +13,33 @@ html
       each item, index in list
         if index != 0
           | , 
+        if index == list.length - 1
+          | and 
         em= item
 
     .banner
       article
         aside: h2 Skills
-        h1 Douglas J. Meyer
+        h1
+          | Douglas J. Meyer 
+          a(href="mail-to:Douglas.Meyer@mail.com" print-content="(Douglas.Meyer@mail.com)")
 
     article
       aside
-        +ems([
-          'Ruby on Rails',
-          'CoffeeScript',
-          'jQuery',
-          'git',
-          'AngularJS',
-          'SASS (CSS)',
-          'Postgres'
-        ])
+        p
+          +ems([
+            'Ruby on Rails',
+            'CoffeeScript',
+            'jQuery',
+            'git',
+            'AngularJS',
+            'SASS (CSS)',
+            'Postgres'
+          ])
       p
-        | I'm a senior software engineer with 7 years of professional
+        | I'm a senior software engineer with 8 years of professional
         | web-development experience, and recently I've been focusing on
-        | front-end technologies.
+        | front-end technologies. 
 
     article
       aside
@@ -44,14 +49,14 @@ html
       p
         | When I started, it was a small development team of 5 people working on a
         | product for use within the company. This allowed me to be involved in
-        | many aspects of software development including:
+        | many aspects of software development including: 
         +ems(['agile development', 'database migrations', 'deployment', 'product support', 'incorporating user feedback'])
         | .
       p
         | Since then, it has grown to a 50 person software team working on a
         | variety of internal and external products. This transition allowed me
         | to learn a more specific set of technologies. As I've worked at Centro
-        | I've learned a number of technologies:
+        | I've learned a number of technologies: 
         +ems(['Ruby on Rails', 'CoffeeScript', 'jQuery', 'AngularJS', 'git', 'gulp.js', 'jade', 'Postgres', 'SASS (CSS)', 'SproutCore'])
         | .
 
@@ -82,7 +87,7 @@ html
         h2 &nbsp;
         +ems(['node', 'npm', 'gulp', 'bower', 'livereload', 'connect'])
       h2
-        a(href="http://douglas-meyer.name/BuildJS" title="see it in action") BuildJS
+        a.screen-link(href="http://douglas-meyer.name/BuildJS" title="see it in action") BuildJS
         a(href="http://github.com/DouglasMeyer/BuildJS" title="on github")
       p
         | This project was used to primarily learn the gulp front-end build
@@ -106,7 +111,7 @@ html
         h2 &nbsp;
         +ems(['node', 'npm', 'JavaScript'])
       h2
-        a(href="http://douglas-meyer.name/test_it/" title="see it in action") TestIt
+        a.screen-link(href="http://douglas-meyer.name/test_it/" title="see it in action") TestIt
         a(href="http://github.com/DouglasMeyer/test_it" title="on github")
       p
         | A JS testing framework I wrote because, at the time, most JS testing
@@ -116,4 +121,6 @@ html
 
     article
       h2 Education
-      p Bachelors of Science in Computer Science at Illinois Institute of Technology
+      p 
+        | Bachelors of Science in Computer Science at Illinois Institute of
+        | Technology.
