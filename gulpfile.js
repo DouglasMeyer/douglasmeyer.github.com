@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     refresh = require('gulp-livereload'),
     lrServer = require('tiny-lr')(),
     minifyCSS = require('gulp-minify-css'),
+    minifyHTML = require('gulp-minify-html'),
     embedlr = require('gulp-embedlr'),
     prefix = require('gulp-autoprefixer');
 
@@ -33,6 +34,7 @@ gulp.task('html', function() {
       .pipe(embedlr({
         src: 'http://localhost:' + lrPort + '/livereload.js?snipver=1'
       }))
+      .pipe(minifyHTML())
       .pipe(gulp.dest(buildDir))
       .pipe(refresh(lrServer));
 });
