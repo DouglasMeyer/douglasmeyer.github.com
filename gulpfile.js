@@ -13,12 +13,13 @@ var gulp = require('gulp'),
 
 
 // - Constants
-var srcDir = './',
+var srcDir = './src/',
+    bowerDir = './bower_components/',
     jadeFiles = [
       srcDir+'/index.jade'
     ],
     scssFiles = [
-      srcDir+'/normalize.css',
+      bowerDir+'/normalize.css/normalize.css',
       srcDir+'/index.scss'
     ],
     buildDir = './',

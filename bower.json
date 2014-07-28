@@ -1,0 +1,13 @@
+{
+  "name": "douglasmeyer.github.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DouglasMeyer/douglasmeyer.github.com",
+  "authors": [
+    "Douglas Meyer <Douglas.Meyer@mail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "normalize.css": "~3.0.1"
+  }
+}
