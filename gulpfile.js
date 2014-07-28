@@ -41,7 +41,7 @@ gulp.task('css', function() {
   gulp.src(scssFiles)
       .pipe(scss().on('error', gutil.log))
       .pipe(prefix())
-      //.pipe(minifyCSS())
+      .pipe(minifyCSS())
       .pipe(concat('index.css'))
       .pipe(gulp.dest(buildDir))
       .pipe(refresh(lrServer));
