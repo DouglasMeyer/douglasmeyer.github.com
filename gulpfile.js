@@ -8,29 +8,18 @@ var gulp = require('gulp'),
     refresh = require('gulp-livereload'),
     lrServer = require('tiny-lr')(),
     minifyCSS = require('gulp-minify-css'),
-    embedlr = require('gulp-embedlr');
+    embedlr = require('gulp-embedlr'),
+    prefix = require('gulp-autoprefixer');
 
 
 // - Constants
 var srcDir = './',
-    jadeGlob = '**/*.jade',
-    scssGlob = '**/*.scss',
-    jsGlob = '**/*.js',
     jadeFiles = [
-      //srcDir+jadeGlob
       srcDir+'/index.jade'
     ],
     scssFiles = [
-      //srcDir+scssGlob
       srcDir+'/normalize.css',
       srcDir+'/index.scss'
-    ],
-    jsFiles   = [
-      //'bower_components/angular/angular.js',
-      //'bower_components/angular-route/angular-route.js',
-      //'bower_components/angular-animate/angular-animate.js',
-      srcDir+'index.js'//, // Ensure our app is between angular and the rest.
-      //srcDir+jsGlob
     ],
     buildDir = './',
     lrPort = 35729;
@@ -50,17 +39,11 @@ gulp.task('html', function() {
 gulp.task('css', function() {
   gulp.src(scssFiles)
       .pipe(scss().on('error', gutil.log))
+      .pipe(prefix())
       //.pipe(minifyCSS())
       .pipe(concat('index.css'))
       .pipe(gulp.dest(buildDir))
       .pipe(refresh(lrServer));
-});
-
-gulp.task('js', function() {
-  gulp.src(jsFiles)
-      .pipe(concat('index.js'))
-      .pipe(gulp.dest(buildDir))
-      .pipe(refresh(lrServer))
 });
 
 gulp.task('server', function(next) {
@@ -70,16 +53,9 @@ gulp.task('server', function(next) {
     .listen(process.env.PORT || 8000, next);
 });
 
-gulp.task('lr-server', function() {
-  //lrServer.listen(lrPort, function(err) {
-  //  if(err) return console.log(err);
-  //});
-});
-
 
 // - Tasks
-gulp.task('default', ['server', 'lr-server', 'html', 'css', 'js'], function() {
-  gulp.watch(jsFiles,   ['js']  );
+gulp.task('default', ['server', 'html', 'css'], function() {
   gulp.watch(scssFiles, ['css'] );
   gulp.watch(jadeFiles, ['html']);
 });

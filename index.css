@@ -231,7 +231,9 @@ button[disabled], input[disabled] {
  * 2. Removes excess padding in IE 8/9.
  */
 input[type="checkbox"], input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -298,7 +300,9 @@ html, body {
   margin: 0; }
 
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
 
 html {
   font-size: 18px;
@@ -323,11 +327,21 @@ body {
 
   40% {
     background-color: rgba(100, 200, 255, 0.3);
-    box-shadow: 0 0 1rem 1rem rgba(100, 200, 255, 0.3); } }
+    -webkit-box-shadow: 0 0 1rem 1rem rgba(100, 200, 255, 0.3);
+            box-shadow: 0 0 1rem 1rem rgba(100, 200, 255, 0.3); } }
+
+@keyframes highlight {
+
+  40% {
+    background-color: rgba(100, 200, 255, 0.3);
+    -webkit-box-shadow: 0 0 1rem 1rem rgba(100, 200, 255, 0.3);
+            box-shadow: 0 0 1rem 1rem rgba(100, 200, 255, 0.3); } }
 
 :target {
   -webkit-animation-duration: 1s;
-  -webkit-animation-name: highlight; }
+          animation-duration: 1s;
+  -webkit-animation-name: highlight;
+          animation-name: highlight; }
 
 small {
   float: right;
