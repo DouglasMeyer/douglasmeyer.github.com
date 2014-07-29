@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jade = require('gulp-jade'),
     concat = require('gulp-concat'),
-    scss = require('gulp-sass'),
+    sass = require('gulp-sass'),
     refresh = require('gulp-livereload'),
     lrServer = require('tiny-lr')(),
     minifyCSS = require('gulp-minify-css'),
@@ -41,7 +41,7 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
   gulp.src(scssFiles)
-      .pipe(scss().on('error', gutil.log))
+      .pipe(sass().on('error', gutil.log))
       .pipe(prefix())
       .pipe(minifyCSS())
       .pipe(concat('index.css'))
