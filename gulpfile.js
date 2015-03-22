@@ -49,11 +49,15 @@ gulp.task('css', function() {
       .pipe(refresh(lrServer));
 });
 
-gulp.task('server', function(next) {
+gulp.task('server', function(){
   var connect = require('connect');
-  connect()
-    .use(connect.static(buildDir))
-    .listen(process.env.PORT || 8000, next);
+  var serveStatic = require('serve-static');
+  var http = require('http');
+  var path = require('path');
+
+  var base = path.resolve('dist');
+  var app = connect().use(serveStatic(buildDir));
+  return http.createServer(app).listen(process.env.PORT || 8000, null);
 });
 
 
