@@ -49,6 +49,14 @@ gulp.task('css', function() {
       .pipe(refresh(lrServer));
 });
 
+gulp.task('img', function() {
+  gulp.src([
+    srcDir+'/Code.png'
+  ])
+      .pipe(gulp.dest(buildDir))
+      .pipe(refresh(lrServer));
+});
+
 gulp.task('server', function(){
   var connect = require('connect');
   var serveStatic = require('serve-static');
@@ -62,7 +70,7 @@ gulp.task('server', function(){
 
 
 // - Tasks
-gulp.task('default', ['server', 'html', 'css'], function() {
+gulp.task('default', ['server', 'html', 'css', 'img'], function() {
   gulp.watch(scssFiles, ['css'] );
   gulp.watch(jadeFiles, ['html']);
 });
