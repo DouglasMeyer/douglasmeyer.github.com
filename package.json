@@ -20,7 +20,7 @@
     "gulp-minify-html": "^0.1.4",
     "gulp-sass": "^2.2.0",
     "gulp-util": "^3.0.0",
-    "node-sass": "^3.4.2",
+    "node-sass": "^3.13.1",
     "tiny-lr": "0.0.7"
   },
   "dependencies": {
