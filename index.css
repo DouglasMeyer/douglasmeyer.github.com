@@ -1,2 +1,375 @@
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */img,legend{border:0}legend,td,th{padding:0}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre,textarea{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}table{border-collapse:collapse;border-spacing:0}
-@charset "UTF-8";article,h1,h2{position:relative}@font-face{font-family:icomoon;src:url(fonts/icomoon.eot?v1in7d);src:url(fonts/icomoon.eot?#iefixv1in7d) format("embedded-opentype"),url(fonts/icomoon.woff?v1in7d) format("woff"),url(fonts/icomoon.ttf?v1in7d) format("truetype"),url(fonts/icomoon.svg?v1in7d#icomoon) format("svg");font-weight:400;font-style:normal}@page{margin:3rem 0}body,html{width:100%;margin:0}*{box-sizing:border-box}html{font-size:18px;line-height:1.2}body{margin:0 auto;background-color:#FAFAFA;color:#212121;background-image:url(/Code.png);background-attachment:fixed;background-size:cover}@media print{html{font-size:12pt}body{margin-top:3rem;width:8.5in;position:relative}}@keyframes highlight{40%{opacity:.5}}:target{animation-duration:1s;animation-name:highlight}small{float:right;line-height:1.625}h1,h2{margin-top:2em;margin-bottom:.5em}h1:first-child,h2:first-child{margin-top:0}h1:last-child,h2:last-child{margin-bottom:0}h1{font-size:2rem}h2{font-size:1.5rem}p{margin:0 0 1rem;page-break-inside:avoid}em{color:#000}[title]{cursor:help}article{display:grid;grid-row-gap:1rem;-ms-flex-align:center;align-items:center;margin:10rem 0;background-color:#EEE;color:#111;padding:4rem 1rem;box-shadow:inset 0 0 5px rgba(0,0,0,.5);grid-template-columns:auto}article>.body{z-index:1;max-width:30rem}article>aside{font-size:.8em;text-align:right}@media (min-width:40rem){article{grid-template-columns:1fr auto 1rem 12rem 1fr}article>.body{grid-column:2/3}article>aside{grid-column:-3/-2}}article[subject]::before{content:attr(subject) "";position:absolute;color:rgba(255,255,255,.5);font-size:calc(1rem + 5vw);font-weight:700;line-height:1;top:-.8em;left:3rem;z-index:-1}a[href^="mail-to:"]:after,a[href^="http://github.com"]:before{font-family:icomoon;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media print{article{margin:0 0 2rem;padding:0;box-shadow:none}article>.body{max-width:none}article[subject]::before{content:""}}.skills>:after{content:" ■"}a[href^="mail-to:"],a[href^="http://github.com"]{text-decoration:none}a[href^="http://github.com"]:before{content:"\e600";padding-left:.5rem}a[href^="mail-to:"]:hover{text-decoration:underline}a[href^="mail-to:"]:after{content:"\e601";vertical-align:bottom}@media print{a[href^="mail-to:"],a[print-content]{text-decoration:underline}a[print-content]:before{content:attr(print-content)!important;font-size:1rem}a{color:inherit}a[href^="mail-to:"]:after,a[href^="http://github.com"]:before{display:none}a[href^="http://github.com"]:after{margin-left:1rem;content:attr(href);font-size:1rem;text-decoration:underline}.screen-link{text-decoration:none}}
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+img,
+legend {
+  border: 0;
+}
+legend,
+td,
+th {
+  padding: 0;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background: 0 0;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+optgroup,
+strong {
+  font-weight: 700;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+pre,
+textarea {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@charset "UTF-8";
+article,
+h1,
+h2 {
+  position: relative;
+}
+@font-face {
+  font-family: icomoon;
+  src: url(fonts/icomoon.eot?v1in7d);
+  src: url(fonts/icomoon.eot?#iefixv1in7d) format("embedded-opentype"),
+    url(fonts/icomoon.woff?v1in7d) format("woff"),
+    url(fonts/icomoon.ttf?v1in7d) format("truetype"),
+    url(fonts/icomoon.svg?v1in7d#icomoon) format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@page {
+  margin: 3rem 0;
+}
+body,
+html {
+  width: 100%;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+  line-height: 1.2;
+}
+body {
+  margin: 0 auto;
+  background-color: #fafafa;
+  color: #212121;
+  background-image: url(/Code.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
+@media print {
+  html {
+    font-size: 12pt;
+  }
+  body {
+    margin-top: 3rem;
+    width: 8.5in;
+    position: relative;
+  }
+}
+@keyframes highlight {
+  40% {
+    opacity: 0.5;
+  }
+}
+:target {
+  animation-duration: 1s;
+  animation-name: highlight;
+}
+small {
+  float: right;
+  line-height: 1.625;
+}
+h1,
+h2 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+h1:first-child,
+h2:first-child {
+  margin-top: 0;
+}
+h1:last-child,
+h2:last-child {
+  margin-bottom: 0;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+p {
+  margin: 0 0 1rem;
+  page-break-inside: avoid;
+}
+em {
+  color: #000;
+}
+[title] {
+  cursor: help;
+}
+article {
+  display: grid;
+  grid-row-gap: 1rem;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 10rem 0;
+  background-color: #eee;
+  color: #111;
+  padding: 4rem 1rem;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  grid-template-columns: auto;
+}
+article > .body {
+  z-index: 1;
+  max-width: 30rem;
+}
+article > aside {
+  font-size: 0.8em;
+  text-align: right;
+}
+@media (min-width: 40rem) {
+  article {
+    grid-template-columns: 1fr auto 1rem 12rem 1fr;
+  }
+  article > .body {
+    grid-column: 2/3;
+  }
+  article > aside {
+    grid-column: -3/-2;
+  }
+}
+article[subject]::before {
+  content: attr(subject) "";
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: calc(1rem + 5vw);
+  font-weight: 700;
+  line-height: 1;
+  top: -0.8em;
+  left: 3rem;
+  z-index: -1;
+}
+a[href^="mail-to:"]:after,a[href^="http://github.com"]:before
+{
+  font-family: icomoon;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media print {
+  article {
+    margin: 0 0 2rem;
+    padding: 0;
+    box-shadow: none;
+  }
+  article > .body {
+    max-width: none;
+  }
+  article[subject]::before {
+    content: "";
+  }
+}
+.skills > :after {
+  content: " \25a0";
+}
+a[href^="mail-to:"],a[href^="http://github.com"]
+{
+  text-decoration: none;
+}
+a[href^="http://github.com"]:before
+{
+  content: "\e600";
+  padding-left: 0.5rem;
+}
+a[href^="mail-to:"]:hover {
+  text-decoration: underline;
+}
+a[href^="mail-to:"]:after {
+  content: "\e601";
+  vertical-align: bottom;
+}
+@media print {
+  a[href^="mail-to:"],
+  a[print-content] {
+    text-decoration: underline;
+  }
+  a[print-content]:before {
+    content: attr(print-content) !important;
+    font-size: 1rem;
+  }
+  a {
+    color: inherit;
+  }
+  a[href^="mail-to:"]:after,a[href^="http://github.com"]:before
+  {
+    display: none;
+  }
+  a[href^="http://github.com"]:after
+  {
+    margin-left: 1rem;
+    content: attr(href);
+    font-size: 1rem;
+    text-decoration: underline;
+  }
+  .screen-link {
+    text-decoration: none;
+  }
+}
