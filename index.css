@@ -257,7 +257,7 @@ p {
 em {
   color: #000;
 }
-[title] {
+[title]:not(a) {
   cursor: help;
 }
 article {
@@ -265,12 +265,13 @@ article {
   grid-row-gap: 1rem;
   -ms-flex-align: center;
   align-items: center;
-  margin: 10rem 0;
+  margin: 10rem auto;
   background-color: #eee;
   color: #111;
   padding: 4rem 1rem;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   grid-template-columns: auto;
+  max-width: 65rem;
 }
 article > .body {
   z-index: 1;
@@ -279,6 +280,10 @@ article > .body {
 article > aside {
   font-size: 0.8em;
   text-align: right;
+}
+article > aside > img {
+  width: 100%;
+  max-width: 20em;
 }
 @media (min-width: 40rem) {
   article {
@@ -302,7 +307,7 @@ article[subject]::before {
   left: 3rem;
   z-index: -1;
 }
-a[href^="mail-to:"]:after,a[href^="http://github.com"]:before
+a[href^="mail-to:"]:after,a[href^="https://github.com"]:before
 {
   font-family: icomoon;
   speak: none;
@@ -330,11 +335,11 @@ a[href^="mail-to:"]:after,a[href^="http://github.com"]:before
 .skills > :after {
   content: " \25a0";
 }
-a[href^="mail-to:"],a[href^="http://github.com"]
+a[href^="mail-to:"],a[href^="https://github.com"]
 {
   text-decoration: none;
 }
-a[href^="http://github.com"]:before
+a[href^="https://github.com"]:before
 {
   content: "\e600";
   padding-left: 0.5rem;
@@ -358,11 +363,11 @@ a[href^="mail-to:"]:after {
   a {
     color: inherit;
   }
-  a[href^="mail-to:"]:after,a[href^="http://github.com"]:before
+  a[href^="mail-to:"]:after,a[href^="https://github.com"]:before
   {
     display: none;
   }
-  a[href^="http://github.com"]:after
+  a[href^="https://github.com"]:after
   {
     margin-left: 1rem;
     content: attr(href);
