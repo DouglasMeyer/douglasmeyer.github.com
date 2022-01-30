@@ -169,6 +169,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Layout/Positioning */
 @charset "UTF-8";
 article,
 h1,
@@ -201,19 +202,31 @@ html {
   line-height: 1.2;
 }
 body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
   margin: 0 auto;
   background-color: #fafafa;
   color: #212121;
-  background-image: url(/Code.png);
+  background-image: url(./Code.png);
   background-attachment: fixed;
   background-size: cover;
+  max-width: 65rem;
+}
+body > article:not(.mini) {
+  grid-column: 1 / 3;
+  margin-top: 10rem;
+}
+body > article.mini {
+  margin-top: 5rem;
 }
 @media print {
   html {
-    font-size: 12pt;
+    font-size: 11pt;
   }
   body {
-    margin-top: 3rem;
+    margin: 0;
+    padding: 0 2rem;
     width: 8.5in;
     position: relative;
   }
@@ -252,7 +265,6 @@ h2 {
 }
 p {
   margin: 0 0 1rem;
-  page-break-inside: avoid;
 }
 em {
   color: #000;
@@ -265,13 +277,15 @@ article {
   grid-row-gap: 1rem;
   -ms-flex-align: center;
   align-items: center;
-  margin: 10rem auto;
   background-color: #eee;
   color: #111;
   padding: 4rem 1rem;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   grid-template-columns: auto;
-  max-width: 65rem;
+}
+article.mini {
+  padding: 1rem;
+  align-items: start;
 }
 article > .body {
   z-index: 1;
@@ -285,14 +299,14 @@ article > aside > img {
   width: 100%;
   max-width: 20em;
 }
-@media (min-width: 40rem) {
-  article {
+@media (min-width: 40rem), print {
+  article:not(.mini) {
     grid-template-columns: 1fr auto 1rem 12rem 1fr;
   }
-  article > .body {
+  article:not(.mini) > .body {
     grid-column: 2/3;
   }
-  article > aside {
+  article:not(.mini) > aside {
     grid-column: -3/-2;
   }
 }
@@ -320,8 +334,9 @@ a[href^="mail-to:"]:after,a[href^="https://github.com"]:before
   -moz-osx-font-smoothing: grayscale;
 }
 @media print {
-  article {
-    margin: 0 0 2rem;
+  body > article {
+    margin: 0 !important;
+    margin-bottom: 2rem;
     padding: 0;
     box-shadow: none;
   }
@@ -362,6 +377,7 @@ a[href^="mail-to:"]:after {
   }
   a {
     color: inherit;
+    word-break: break-all;
   }
   a[href^="mail-to:"]:after,a[href^="https://github.com"]:before
   {
@@ -369,6 +385,7 @@ a[href^="mail-to:"]:after {
   }
   a[href^="https://github.com"]:after
   {
+    display: inline-block;
     margin-left: 1rem;
     content: attr(href);
     font-size: 1rem;
