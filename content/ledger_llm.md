@@ -93,3 +93,5 @@ Still, there are some changes that would be good to try:
 1. The account names read nice, but there are some cases where the name could confuse the model. It is worth trying to give it the account's ids (and this might save on tokens/time as well).
 2. There are lots of models to try out, or choose different quantization levels, or tweak the model's context length. There are a lot of LLM model/options to play with.
 3. In my setup, this is an expensive operation (takes just over a minute). I do cache the result, and try to warm the cache before this service is called. However it would probably be best to get a faster ollama server.
+
+The real code is up on github [DouglasMeyer/ledger](https://github.com/DouglasMeyer/ledger/blob/54b89625ad4206f32c681004ed6f0d739bee0e8d/app/controllers/api/bank_entry_autocomplete_v1.rb)
