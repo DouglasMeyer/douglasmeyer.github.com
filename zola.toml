@@ -1,0 +1,34 @@
+# The URL the site will be built for
+base_url = "https://douglas-meyer.name"
+theme = "linkita"
+author = "Douglas Meyer"
+# title = ""
+# description = ""
+
+generate_feeds = true
+# feed_filenames = ["atom.xml"] # ["rss.xml"]
+
+# build_search_index = true
+
+# Whether to automatically compile all Sass files in the sass directory
+#compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+# Put all your custom variables here
+
+[extra.footer]
+#copyright = "&copy;&nbsp;$YEAR Your Name &vert; [CC BY-SA 4.0]($LICENSE_URL)"
+
+[[taxonomies]]
+name = "tags"
+feed = true
+paginate_by = 4
+
